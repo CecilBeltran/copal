@@ -10,9 +10,9 @@ const Footer = ()=>{
             <div className="row">
                 <div className="col">
                     <div >
-                    <a href="/" className="m-3" ><img src={facebook} alt={"facebook"} width={"34px"}/></a>
-                    <a href="/" className="m-3" ><img src={instagram} alt={"instagram"} width={"34px"} /></a>
-                    <a href="/"  className="m-3"><img src={whatsapp} alt={"whatsapp"}width={"34px"}/></a>
+                    <a href="https://www.facebook.com/copalarmonia-101497228962949/" className="m-3" ><img src={facebook} alt={"facebook"} width={"34px"}/></a>
+                    <a href="https://www.instagram.com/copalarmonia/" className="m-3" ><img src={instagram} alt={"instagram"} width={"34px"} /></a>
+                    <a href="https://api.whatsapp.com/send?phone=598098443126"  className="m-3"><img src={whatsapp} alt={"whatsapp"}width={"34px"}/></a>
                     <div className="text-center mt-3"><img  src={logoTarjetas} alt="logos de tarjetas" /></div>
                     </div>
                     <div className="text-end mt-3">
