@@ -60,6 +60,7 @@ const Checkout = ()=>{
                 </div>
                 <div className="col-md-9">
                     <table className="table">
+                        <tbody>
                         {
                             cart.map(item => ( 
                                 <tr key={item.index}>
@@ -75,6 +76,7 @@ const Checkout = ()=>{
                             <td className="text-center">Total a Pagar</td>
                             <td className="text-center"><b>${cartSum()}</b></td>
                         </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

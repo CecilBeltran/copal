@@ -23,6 +23,7 @@ const Cart = ()=>{
                 <h1 className="text-center">Productos Seleccionados</h1>
                 <div className="col-md-12">
                     <table className="table">
+                       <thead>
                         <tr>
                             <td className="text-end" colSpan={5}><Link className="btn btn-outline-success" onClick={() => {clear()}}>Vaciar Carrito</Link></td>
                         </tr>
@@ -43,6 +44,7 @@ const Cart = ()=>{
                             <td className="text-center"><b>${cartSum()}</b></td>
                             <td className="text-end"><Link to={"/checkout"} className="btn btn-outline-success">Finalizar Compra</Link></td>
                         </tr>
+                        </thead>
                     </table>
                 </div>
             </div>
