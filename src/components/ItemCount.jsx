@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount=({stock})=>{
+
+const ItemCount=({stock, onAdd})=>{
     const [items, setItems]= useState(1);
     const [itemStock, setItemStock]= useState(stock);
+    const [itemAdded, setItemAdded]= useState(false)
 
     const incrementarStock=()=>{
         if (items < itemStock){
@@ -13,13 +16,15 @@ const ItemCount=({stock})=>{
         if (items > 1){
             setItems(items -1)}
     }
-    const onAdd =()=>{
+    const addToCart =()=>{
         if (itemStock >= items){
             setItemStock(itemStock - items) 
-            setItems(0)
+            setItems(1)
+            setItemAdded(true);
+            onAdd(items);
         }
-        console.log("Agregaste: " + items + " Productos al Carrito");
     }
+ 
     useEffect(() => {
         setItemStock(stock);
     }, [stock]); 
@@ -29,15 +34,16 @@ const ItemCount=({stock})=>{
             <div className="row my-1">
                 <div className="col ">
                     <div className="btn-group" >
-                        <button type="button" className="btn btn-warning" onClick={decrementarStock}> -</button>
-                        <button type="button" className="btn btn-warning"  > {items} </button>
-                        <button type="button" className="btn btn-warning"  onClick={incrementarStock} > +</button>
+                        <button type="button" className="btn btn-success" onClick={decrementarStock}> -</button>
+                        <button type="button" className="btn btn-success"  > {items} </button>
+                        <button type="button" className="btn btn-success"  onClick={incrementarStock} > +</button>
                     </div>
                 </div>
             </div>
             <div className="row my-1">
                 <div className="col">
-                    <button className="btn btn-warning" onClick={onAdd}>Agregar Productos</button>
+                    {itemAdded ? <Link to={"/cart"} className="btn btn-success" >Finalizar mi Compra</Link> :
+                    <button className="btn btn-success" onClick={addToCart}>Agregar Productos</button>}
                 </div>
             </div>
         </div> 
